@@ -14,7 +14,7 @@ const Home = () => {
             <span className="text-xl">Front-End Developer</span>
             <h1 className="h1">
               {/* eslint-disable-next-line react/no-unescaped-entities */}
-              Hello I'm <br /> <span className="text-accent">Masood </span>{' '}
+              Hello I'm <br /> <span className="text-accent">Masood </span>
             </h1>
             <p className="max-w[500px] mb-9 text-white/80 ">
               I Have experince in React and Angular, skilled at creating
