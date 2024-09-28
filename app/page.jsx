@@ -28,8 +28,14 @@ const Home = () => {
                 size="lg"
                 className="uppercase flex items-center gap-2"
               >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
+                <a
+                  href="/assets/Masood Moosavi - Front End Developer.pdf"
+                  download="Masood Moosavi - Front End Developer.pdf"
+                  className="flex items-center space-x-2"
+                >
+                  <span>Download CV</span>
+                  <FiDownload className="text-xl" />
+                </a>
               </Button>
               <div className="mb-8 xl:mb-0">
                 <Social

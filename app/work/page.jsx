@@ -20,35 +20,56 @@ const projects = [
   {
     num: '01',
     category: 'frontend',
-    title: 'project 1',
+    title: 'Nexter',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati.',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'Javascript' }],
-    image: '/assets/work/thumb1.png',
-    live: '',
-    github: '',
+      'Nexter is a responsive website for showcasing luxury homes, featuring a sleek design, dynamic grid layout, and smooth animations. Built using HTML, CSS, Sass, and JavaScript, it demonstrates modern front-end development techniques for an engaging user experience.',
+    stack: [
+      { name: 'Html 5' },
+      { name: 'Css 3' },
+      { name: 'Sass' },
+      { name: 'Javascript' },
+    ],
+    image: '/assets/work/Nexter.png',
+    live: 'https://nextteer.netlify.app/',
+    github: 'https://github.com/M4SooD/Nexter',
   },
   {
     num: '02',
-    category: 'fullstack',
-    title: 'project 2',
+    category: 'frontend',
+    title: 'Natours',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati.',
-    stack: [{ name: 'Next.js' }, { name: 'Tailwind.css' }, { name: 'Node.js' }],
-    image: '/assets/work/thumb2.png',
-    live: '',
-    github: '',
+      'Natours is a website for booking adventure tours, designed with a clean, responsive layout and immersive visuals. Built with advanced CSS and Sass, the site features eye-catching animations, parallax effects, and a focus on delivering a smooth user experience across all devices.',
+    stack: [
+      { name: 'Html 5' },
+      { name: 'Css 3' },
+      { name: 'Sass' },
+      { name: 'Javascript' },
+    ],
+    image: '/assets/work/Natours.png',
+    live: 'https://natrourss.netlify.app/',
+    github: 'https://github.com/M4SooD?page=1&tab=repositories',
   },
   {
     num: '03',
     category: 'frontend',
-    title: 'project 3',
+    title: 'Omnifood',
     description:
-      'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati.Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde, obcaecati.',
+      'Omnifood is a website for an AI-powered food delivery service, offering a clean and responsive design. The site showcases modern UI elements, smooth scrolling, and advanced CSS animations, built using HTML, CSS, and JavaScript to ensure a seamless user experience on any device.',
     stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'Javascript' }],
-    image: '/assets/work/thumb3.png',
-    live: '',
-    github: '',
+    image: '/assets/work/Omnifood.png',
+    live: 'https://omniifoods.netlify.app/',
+    github: 'https://github.com/M4SooD/Omnifood',
+  },
+  {
+    num: '03',
+    category: 'frontend',
+    title: 'Forkify',
+    description:
+      'Forkify is a website designed for a recipe-sharing platform, featuring a vibrant and user-friendly interface. Built with responsive design principles, the site utilizes modern CSS techniques and JavaScript for interactive elements, providing an engaging experience for users to explore and share their favorite recipes.',
+    stack: [{ name: 'Html 5' }, { name: 'Sass' }, { name: 'Javascript' }],
+    image: '/assets/work/Forkify.png',
+    live: 'https://forkifaay.netlify.app/',
+    github: 'https://github.com/M4SooD/Forkify',
   },
 ];
 
@@ -75,7 +96,7 @@ const Work = () => {
                 {project.num}
               </div>
               <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+                {project.title}
               </h2>
               <p className="text-white/60">{project.description}</p>
               <ul className="flex gap-4">
@@ -90,7 +111,7 @@ const Work = () => {
               </ul>
               <div className="border border-white/20"></div>
               <div className="flex items-center gap-4">
-                <Link href={project.live}>
+                <Link href={project.live} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -102,7 +123,7 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                <Link href={project.github}>
+                <Link href={project.github} target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
@@ -130,12 +151,7 @@ const Work = () => {
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover"
-                          alt=""
-                        />
+                        <Image src={project.image} fill className="" alt="" />
                       </div>
                     </div>
                   </SwiperSlide>

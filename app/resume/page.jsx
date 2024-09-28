@@ -18,6 +18,26 @@ import {
   SiGit,
   SiJest,
   SiThreedotjs,
+  SiNodedotjs,
+  SiMongodb,
+  SiMongoose,
+  SiExpress,
+  SiMysql,
+  SiNgrx,
+  SiLighthouse,
+  SiReactrouter,
+  SiReactquery,
+  SiReacthookform,
+  SiReacttable,
+  SiStorybook,
+  SiReduxsaga,
+  SiAxios,
+  SiStyledcomponents,
+  SiSass,
+  SiFramer,
+  SiI18Next,
+  SiWebpack,
+  SiBootstrap,
 } from 'react-icons/si';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -34,7 +54,8 @@ import { motion } from 'framer-motion';
 
 const about = {
   title: 'About me',
-  description: '',
+  description:
+    '    I am a skilled Front-End Developer with over 3 years of experience, specializing in creating engaging, user-centric applications using React and Angular. With a strong foundation in modern web technologies like Redux-Toolkit, MUI, and Cypress, I have a proven track record of delivering high-quality, scalable solutions. My passion for learning and problem-solving, combined with effective communication skills, enables me to collaborate effectively in dynamic team environments.',
   info: [
     {
       filedName: 'Name',
@@ -67,8 +88,7 @@ const about = {
 const experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My experience',
-  description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis et dolorem ex odio! Tempora, possimus optio?',
+  description: `Over the past 3 years, I've honed my front-end development skills in dynamic environments, contributing to innovative projects at companies like Pendar Ideas and Bitbine. I've been deeply involved in developing complex user interfaces, integrating RESTful APIs, and optimizing application performance. My hands-on experience with React, Angular, and modern testing frameworks has allowed me to deliver robust and scalable applications`,
   items: [
     {
       company: 'Pendar Ideas',
@@ -91,12 +111,17 @@ const education = {
   icon: '/assets/resume/cap.svg',
   title: 'My education',
   description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis et dolorem ex odio! Tempora, possimus optio?',
+    '    My educational background in English Literature, combined with technical training in MERN stack development, has equipped me with a unique blend of communication skills and technical expertise. This combination has been instrumental in my ability to translate complex technical concepts into user-friendly applications and collaborate effectively with cross-functional teams.',
   items: [
     {
       Univercity: 'Shahd Bahonar Kerman Univercity',
       degree: 'English Literature',
       duration: '2017 - 2021',
+    },
+    {
+      Univercity: 'Karademy',
+      degree: 'MERN Stack Developer',
+      duration: '2021 - 2022',
     },
   ],
 };
@@ -104,7 +129,7 @@ const education = {
 const skills = {
   title: 'My skills',
   description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut corporis et dolorem ex odio! Tempora, possimus optio?',
+    'I have developed a strong proficiency in front-end technologies, particularly in React.js, Angular, and Next.js. My expertise extends to state management with Redux and NGRX, UI/UX development with Material-UI and TailwindCSS, and testing with Jest and Cypress. I am also well-versed in modern JavaScript (ES6+), TypeScript, and responsive design, enabling me to build high-performing, scalable web applications.',
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -119,48 +144,135 @@ const skills = {
       name: 'Javascript',
     },
     {
-      icon: <FaReact />,
-      name: 'react.js',
+      icon: <SiTypescript />,
+      name: 'typescript',
     },
+    ,
     {
-      icon: <FaAngular />,
-      name: 'Angular',
-    },
-    {
-      icon: <SiNextdotjs />,
-      name: 'next.js',
+      icon: <SiSass />,
+      name: 'Styled components',
     },
     {
       icon: <SiTailwindcss />,
       name: 'tailwind.css',
     },
     {
+      icon: <SiBootstrap />,
+      name: 'Bootstrap',
+    },
+    {
+      icon: <FaReact />,
+      name: 'react.js',
+    },
+    {
+      icon: <SiReactrouter />,
+      name: 'react router',
+    },
+    {
+      icon: <SiReactquery />,
+      name: 'react query',
+    },
+    {
       icon: <SiRedux />,
       name: 'Redux',
     },
     {
-      icon: <FaFigma />,
-      name: 'figma',
+      icon: <SiReduxsaga />,
+      name: 'Redux Saga',
     },
     {
       icon: <SiCypress />,
       name: 'cypress',
     },
     {
-      icon: <SiGit />,
-      name: 'git',
+      icon: <SiReacthookform />,
+      name: 'react hook form',
+    },
+    {
+      icon: <SiReacttable />,
+      name: 'react table',
+    },
+    {
+      icon: <SiStyledcomponents />,
+      name: 'Styled components',
+    },
+    {
+      icon: <SiFramer />,
+      name: 'Framer motion',
+    },
+    {
+      icon: <SiI18Next />,
+      name: 'React-i18next',
+    },
+    {
+      icon: <SiNextdotjs />,
+      name: 'next.js',
     },
     {
       icon: <SiThreedotjs />,
       name: 'three.js',
     },
+
     {
-      icon: <SiTypescript />,
-      name: 'typescript',
+      icon: <SiStorybook />,
+      name: 'react table',
     },
+    {
+      icon: <SiLighthouse />,
+      name: 'lighthouse',
+    },
+    {
+      icon: <SiWebpack />,
+      name: 'webpack',
+    },
+
+    {
+      icon: <SiAxios />,
+      name: 'axios',
+    },
+
+    {
+      icon: <FaAngular />,
+      name: 'Angular',
+    },
+    {
+      icon: <SiNgrx />,
+      name: 'Ngrx',
+    },
+
+    {
+      icon: <FaFigma />,
+      name: 'figma',
+    },
+
+    {
+      icon: <SiGit />,
+      name: 'git',
+    },
+
     {
       icon: <SiJest />,
       name: 'jest',
+    },
+    {
+      icon: <SiNodedotjs />,
+      name: 'node.js',
+    },
+    {
+      icon: <SiMongodb />,
+      name: 'Mongodb',
+    },
+    {
+      icon: <SiMongoose />,
+      name: 'Mongoose',
+    },
+    {
+      icon: <SiExpress />,
+      name: 'Express',
+    },
+    {
+      icon: <SiMysql />,
+      name: 'mysql',
     },
   ],
 };

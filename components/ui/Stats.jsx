@@ -4,19 +4,19 @@ import CountUp from 'react-countup';
 
 const stats = [
   {
-    num: 12,
+    num: 3,
     text: 'years of experience',
   },
   {
-    num: 26,
+    num: 12,
     text: 'Projects Compeleted',
   },
   {
-    num: 8,
+    num: 14,
     text: 'Technologies Mastered',
   },
   {
-    num: 500,
+    num: '+' + 500,
     text: 'Code Commits',
   },
 ];
@@ -37,6 +37,7 @@ const Stats = () => {
                   duration={5}
                   delay={2}
                   className="text-4xl xl:text-6xl font-extrabold"
+                  suffix={item.text === 'Code Commits' ? '+' : ''}
                 />
                 <p
                   className={`${
