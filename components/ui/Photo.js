@@ -24,8 +24,9 @@ const Photo = () => {
             src="/assets/photo4.jpg"
             priority
             quality={100}
+            alt="Profile picture"
+            sizes="(max-width: 768px) 120px, 200px"
             fill
-            alt=""
             className="object-contain rounded-full"
           />
         </motion.div>

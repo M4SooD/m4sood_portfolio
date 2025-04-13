@@ -3,6 +3,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { CiMenuFries } from 'react-icons/ci';
+import { useState } from 'react';
 
 const links = [
   {
@@ -17,20 +18,30 @@ const links = [
     name: 'resume',
     path: '/resume',
   },
-  {
-    name: 'work',
-    path: '/work',
-  },
+  // {
+  //   name: 'work',
+  //   path: '/work',
+  // },
   {
     name: 'contact',
     path: '/contact',
   },
 ];
+
 const MobileNav = () => {
-  const pathname = usePathname;
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  const handleLinkClick = () => {
+    setIsOpen(false); // بسته شدن نوبار
+  };
+
   return (
-    <Sheet>
-      <SheetTrigger className="flex justify-center items-center">
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger
+        className="flex justify-center items-center"
+        onClick={() => setIsOpen(true)}
+      >
         <CiMenuFries className="text-[32] text-accent" />
       </SheetTrigger>
       <SheetContent className="flex flex-col">
@@ -47,6 +58,7 @@ const MobileNav = () => {
               <Link
                 href={link.path}
                 key={index}
+                onClick={handleLinkClick} // بسته شدن نوبار
                 className={`${
                   link.path === pathname &&
                   'text-accent border-b-2 border-accent'
@@ -61,4 +73,5 @@ const MobileNav = () => {
     </Sheet>
   );
 };
+
 export default MobileNav;

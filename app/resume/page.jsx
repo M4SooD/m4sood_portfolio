@@ -76,7 +76,7 @@ const about = {
     },
     {
       filedName: 'Email',
-      fieldValue: 'm4sood.m@gmail.com',
+      fieldValue: 'masood.m.dev@gmail.com',
     },
     {
       filedName: 'Language',
@@ -93,17 +93,22 @@ const experience = {
     {
       company: 'Pendar Ideas',
       position: 'Front-End Developer',
-      duration: '2023 - 2024',
+      duration: '2024 - 2025',
     },
     {
       company: 'Bitbine',
+      position: 'Front-End Developer',
+      duration: '2023 - 2024',
+    },
+    {
+      company: 'Immorit',
       position: 'Front-End Developer',
       duration: '2022 - 2023',
     },
     {
       company: 'Karademy',
       position: 'MERN stack Developer Intern',
-      duration: '2021 - 2022',
+      duration: '2021 - 2021',
     },
   ],
 };
@@ -121,7 +126,7 @@ const education = {
     {
       Univercity: 'Karademy',
       degree: 'MERN Stack Developer',
-      duration: '2021 - 2022',
+      duration: '2021 - 2021',
     },
   ],
 };
