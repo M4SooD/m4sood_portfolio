@@ -44,7 +44,7 @@ const MobileNav = () => {
       >
         <CiMenuFries className="text-[32] text-accent" />
       </SheetTrigger>
-      <SheetContent className="flex flex-col">
+      <SheetContent className="flex flex-col overflow-y-auto max-h-screen px-6">
         <div className="mt-32 mb-40 text-center text-2xl">
           <Link href="/">
             <h1 className="text-4xl font-semibold">
@@ -58,7 +58,7 @@ const MobileNav = () => {
               <Link
                 href={link.path}
                 key={index}
-                onClick={handleLinkClick} // بسته شدن نوبار
+                onClick={handleLinkClick}
                 className={`${
                   link.path === pathname &&
                   'text-accent border-b-2 border-accent'
