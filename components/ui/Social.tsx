@@ -1,5 +1,4 @@
 import Link from 'next/link';
-
 import {
   FaGithub,
   FaLinkedinIn,
@@ -7,8 +6,13 @@ import {
   FaTelegram,
   FaGitlab,
 } from 'react-icons/fa';
+import { FC, ReactNode } from 'react';
 
-const socials = [
+type SocialItem = {
+  icon: ReactNode;
+  path: string;
+};
+const socials: SocialItem[] = [
   { icon: <FaGithub />, path: 'https://github.com/M4SooD' },
   { icon: <FaGitlab />, path: 'https://gitlab.com/M4SooD' },
   {
@@ -19,13 +23,18 @@ const socials = [
   { icon: <FaTelegram />, path: 'https://t.me/M4SooD' },
 ];
 
-const Social = ({ containerStyles, iconStyles }) => {
+interface SocialProps {
+  containerStyles: string;
+  iconStyles: string;
+}
+
+const Social: FC<SocialProps> = ({ containerStyles, iconStyles }) => {
   return (
     <div className={containerStyles}>
-      {socials.map((item, index) => {
+      {socials.map((item: SocialItem, index: number) => {
         return (
           <Link
-            key={index}
+            key={item.path}
             href={item.path}
             className={iconStyles}
             target="_blank"
@@ -37,4 +46,5 @@ const Social = ({ containerStyles, iconStyles }) => {
     </div>
   );
 };
+
 export default Social;
