@@ -1,6 +1,7 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { FC, useState } from 'react';
+import { Swiper as SwiperType } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -16,7 +17,22 @@ import Link from 'next/link';
 import Image from 'next/image';
 import WorkSliderBtns from '@/components/WorkSliderBtns';
 
-const projects = [
+interface StackItem {
+  name: string;
+}
+
+interface Project {
+  num: string;
+  category: string;
+  title: string;
+  description: string;
+  stack: StackItem[];
+  image: string;
+  live: string;
+  github: string;
+}
+
+const projects: Project[] = [
   {
     num: '01',
     category: 'frontend',
@@ -61,7 +77,7 @@ const projects = [
     github: 'https://github.com/M4SooD/Omnifood',
   },
   {
-    num: '03',
+    num: '04',
     category: 'frontend',
     title: 'Forkify',
     description:
@@ -73,9 +89,9 @@ const projects = [
   },
 ];
 
-const Work = () => {
-  const [project, setProject] = useState(projects[0]);
-  const handleSlideChange = (swiper) => {
+const Work: FC = () => {
+  const [project, setProject] = useState<Project>(projects[0]);
+  const handleSlideChange = (swiper: SwiperType) => {
     const currentIndex = swiper.activeIndex;
     setProject(projects[currentIndex]);
   };
@@ -102,7 +118,7 @@ const Work = () => {
               <ul className="flex gap-4">
                 {project.stack.map((item, index) => {
                   return (
-                    <li key={index} className="text-xl text-accent">
+                    <li key={item.name} className="text-xl text-accent">
                       {item.name}
                       {index !== project.stack.length - 1 && ','}
                     </li>
@@ -147,7 +163,7 @@ const Work = () => {
             >
               {projects.map((project, index) => {
                 return (
-                  <SwiperSlide key={index} className="w-full">
+                  <SwiperSlide key={project.title} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
                       <div className="relative w-full h-full">
