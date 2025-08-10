@@ -2,9 +2,13 @@
 
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
+import { FC, ReactNode } from 'react';
 
-usePathname;
-const PageTransition = ({ children }) => {
+interface PageTransitionProps {
+  children: ReactNode;
+}
+
+const PageTransition: FC<PageTransitionProps> = ({ children }) => {
   const pathname = usePathname();
   return (
     <AnimatePresence>

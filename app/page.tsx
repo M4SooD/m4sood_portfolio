@@ -4,8 +4,9 @@ import { FiDownload } from 'react-icons/fi';
 import Photo from '@/components/ui/Photo';
 import Stats from '@/components/ui/Stats';
 import Social from '@/components/ui/Social';
+import { FC } from 'react';
 
-const Home = () => {
+const Home: FC = () => {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full">

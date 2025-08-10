@@ -1,8 +1,9 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FC } from 'react';
 
-const Photo = () => {
+const Photo: FC = () => {
   return (
     <div className="w-full h-full relative">
       <motion.div

@@ -49,13 +49,61 @@ import {
 } from '@/components/ui/tooltip';
 
 import { ScrollArea } from '@/components/ui/scroll-area';
-
 import { motion } from 'framer-motion';
+import { FC, ReactNode } from 'react'; // Import FC and ReactNode
 
-const about = {
+interface InfoItem {
+  filedName: string;
+  fieldValue: string;
+}
+
+interface About {
+  title: string;
+  description: string;
+  info: InfoItem[];
+}
+
+interface ExperienceItem {
+  company: string;
+  position: string;
+  duration: string;
+}
+
+interface Experience {
+  icon: string;
+  title: string;
+  description: string;
+  items: ExperienceItem[];
+}
+
+interface EducationItem {
+  Univercity: string;
+  degree: string;
+  duration: string;
+}
+
+interface Education {
+  icon: string;
+  title: string;
+  description: string;
+  items: EducationItem[];
+}
+
+interface SkillItem {
+  icon: ReactNode;
+  name: string;
+}
+
+interface Skills {
+  title: string;
+  description: string;
+  skillList: SkillItem[];
+}
+
+const about: About = {
   title: 'About me',
   description:
-    '    I am a skilled Front-End Developer with over 3 years of experience, specializing in creating engaging, user-centric applications using React and Angular. With a strong foundation in modern web technologies like Redux-Toolkit, MUI, and Cypress, I have a proven track record of delivering high-quality, scalable solutions. My passion for learning and problem-solving, combined with effective communication skills, enables me to collaborate effectively in dynamic team environments.',
+    'I am a skilled Front-End Developer with over 3 years of experience, specializing in creating engaging, user-centric applications using React and Angular. With a strong foundation in modern web technologies like Redux-Toolkit, MUI, and Cypress, I have a proven track record of delivering high-quality, scalable solutions. My passion for learning and problem-solving, combined with effective communication skills, enables me to collaborate effectively in dynamic team environments.',
   info: [
     {
       filedName: 'Name',
@@ -65,7 +113,6 @@ const about = {
       filedName: 'Phone',
       fieldValue: '(+98) 916 823 8775',
     },
-
     {
       filedName: 'Experience',
       fieldValue: '3 Years',
@@ -85,7 +132,7 @@ const about = {
   ],
 };
 
-const experience = {
+const experience: Experience = {
   icon: '/assets/resume/badge.svg',
   title: 'My experience',
   description: `Over the past 3 years, I've honed my front-end development skills in dynamic environments, contributing to innovative projects at companies like Pendar Ideas and Bitbine. I've been deeply involved in developing complex user interfaces, integrating RESTful APIs, and optimizing application performance. My hands-on experience with React, Angular, and modern testing frameworks has allowed me to deliver robust and scalable applications`,
@@ -112,11 +159,11 @@ const experience = {
     },
   ],
 };
-const education = {
+const education: Education = {
   icon: '/assets/resume/cap.svg',
   title: 'My education',
   description:
-    '    My educational background in English Literature, combined with technical training in MERN stack development, has equipped me with a unique blend of communication skills and technical expertise. This combination has been instrumental in my ability to translate complex technical concepts into user-friendly applications and collaborate effectively with cross-functional teams.',
+    'My educational background in English Literature, combined with technical training in MERN stack development, has equipped me with a unique blend of communication skills and technical expertise. This combination has been instrumental in my ability to translate complex technical concepts into user-friendly applications and collaborate effectively with cross-functional teams.',
   items: [
     {
       Univercity: 'Shahd Bahonar Kerman Univercity',
@@ -131,7 +178,7 @@ const education = {
   ],
 };
 
-const skills = {
+const skills: Skills = {
   title: 'My skills',
   description:
     'I have developed a strong proficiency in front-end technologies, particularly in React.js, Angular, and Next.js. My expertise extends to state management with Redux and NGRX, UI/UX development with Material-UI and TailwindCSS, and testing with Jest and Cypress. I am also well-versed in modern JavaScript (ES6+), TypeScript, and responsive design, enabling me to build high-performing, scalable web applications.',
@@ -152,10 +199,9 @@ const skills = {
       icon: <SiTypescript />,
       name: 'typescript',
     },
-    ,
     {
       icon: <SiSass />,
-      name: 'Styled components',
+      name: 'Sass',
     },
     {
       icon: <SiTailwindcss />,
@@ -217,10 +263,9 @@ const skills = {
       icon: <SiThreedotjs />,
       name: 'three.js',
     },
-
     {
       icon: <SiStorybook />,
-      name: 'react table',
+      name: 'storybook',
     },
     {
       icon: <SiLighthouse />,
@@ -230,12 +275,10 @@ const skills = {
       icon: <SiWebpack />,
       name: 'webpack',
     },
-
     {
       icon: <SiAxios />,
       name: 'axios',
     },
-
     {
       icon: <FaAngular />,
       name: 'Angular',
@@ -244,17 +287,14 @@ const skills = {
       icon: <SiNgrx />,
       name: 'Ngrx',
     },
-
     {
       icon: <FaFigma />,
       name: 'figma',
     },
-
     {
       icon: <SiGit />,
       name: 'git',
     },
-
     {
       icon: <SiJest />,
       name: 'jest',
@@ -279,10 +319,10 @@ const skills = {
       icon: <SiMysql />,
       name: 'mysql',
     },
-  ],
+  ].filter(Boolean),
 };
 
-const Resume = () => {
+const Resume: FC = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -304,6 +344,7 @@ const Resume = () => {
             <TabsTrigger value="about">About me</TabsTrigger>
           </TabsList>
           <div className="min-h-[70vh] w-full">
+            {/* Experience */}
             <TabsContent value="experience" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{experience.title}</h3>
@@ -333,6 +374,7 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+            {/* Education */}
             <TabsContent value="education" className="w-full">
               <div className="flex flex-col gap-[30px] text-center xl:text-left">
                 <h3 className="text-4xl font-bold">{education.title}</h3>
@@ -362,11 +404,12 @@ const Resume = () => {
                 </ScrollArea>
               </div>
             </TabsContent>
+            {/* Skills */}
             <TabsContent value="skills" className="w-full">
               <div className="flex flex-col gap-[30px]">
                 <div className="flex flex-col gap-[30px] text-center xl:text-left">
                   <h3 className="text-4xl font-bold">{skills.title}</h3>
-                  <p className="mx-w-[600px] text-white/60 mx-auto xl:mx-0">
+                  <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0">
                     {skills.description}
                   </p>
                 </div>
@@ -392,6 +435,7 @@ const Resume = () => {
                 </ul>
               </div>
             </TabsContent>
+            {/* About */}
             <TabsContent
               value="about"
               className="w-full text-center xl:text-left"

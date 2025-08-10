@@ -2,7 +2,17 @@
 
 import { BsArrowDownRight } from 'react-icons/bs';
 import Link from 'next/link';
-const services = [
+import { motion } from 'framer-motion';
+import { FC } from 'react';
+
+interface Service {
+  num: string;
+  title: string;
+  description: string;
+  href: string;
+}
+
+const services: Service[] = [
   {
     num: '01',
     title: 'Web Development',
@@ -33,9 +43,7 @@ const services = [
   },
 ];
 
-import { motion } from 'framer-motion';
-
-const Services = () => {
+const Services: FC = () => {
   return (
     <section className="min-h-[80vh] flex flex-col justify-center py-12 xl:py-0">
       <div className="container mx-auto">

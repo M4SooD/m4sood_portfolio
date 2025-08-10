@@ -1,6 +1,5 @@
-import { animate, motion } from 'framer-motion';
-
-// variants
+import { motion } from 'framer-motion';
+import { FC } from 'react';
 
 const stairAnimation = {
   initial: {
@@ -14,11 +13,12 @@ const stairAnimation = {
   },
 };
 
-const reverseIndex = (index) => {
+const reverseIndex = (index: number): number => {
   const totalSteps = 6;
   return totalSteps - index - 1;
 };
-const Stairs = () => {
+
+const Stairs: FC = () => {
   return (
     <>
       {[...Array(6)].map((_, index) => {

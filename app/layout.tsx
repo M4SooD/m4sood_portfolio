@@ -1,8 +1,6 @@
 import { JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 
-//Components
-
 import PageTransition from '@/components/PageTransition';
 import StairTransition from '@/components/StairTransition';
 import { Header } from '@/components/Header';
@@ -26,7 +24,11 @@ export const metadata = {
   ],
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <body className={jetbrainsMono.variable}>
