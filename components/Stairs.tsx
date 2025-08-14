@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FC } from 'react';
 
+// variants
 const stairAnimation = {
   initial: {
     top: '0%',
@@ -13,15 +14,18 @@ const stairAnimation = {
   },
 };
 
+const NUMBER_OF_STAIRS = 6;
+
 const reverseIndex = (index: number): number => {
-  const totalSteps = 6;
+  const totalSteps = NUMBER_OF_STAIRS;
   return totalSteps - index - 1;
 };
 
 const Stairs: FC = () => {
   return (
     <>
-      {[...Array(6)].map((_, index) => {
+      {/* TODO #3: Use the new constant here. */}
+      {[...Array(NUMBER_OF_STAIRS)].map((_, index) => {
         return (
           <motion.div
             key={index}

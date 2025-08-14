@@ -3,30 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { FC } from 'react';
-
-type LinkItem = { name: string; path: string };
-const links: LinkItem[] = [
-  {
-    name: 'home',
-    path: '/',
-  },
-  {
-    name: 'services',
-    path: '/services',
-  },
-  {
-    name: 'resume',
-    path: '/resume',
-  },
-  {
-    name: 'work',
-    path: '/work',
-  },
-  {
-    name: 'contact',
-    path: '/contact',
-  },
-];
+import { links } from '@/constants';
 
 const Nav: FC = () => {
   const pathname = usePathname();
