@@ -3,6 +3,7 @@ import { Button } from './ui/button';
 import Nav from './Nav';
 import MobileNav from './MobileNav';
 import { FC } from 'react';
+import ThemeToggle from './ThemeToggle';
 export const Header: FC = () => {
   return (
     <header className="py-8 xl:py-12 text-white">
@@ -17,6 +18,7 @@ export const Header: FC = () => {
         {/* desktop nav */}
         <div className="hidden xl:flex items-center gap-8">
           <Nav />
+          <ThemeToggle />
           <Link href="/contact">
             <Button>Hire me</Button>
           </Link>

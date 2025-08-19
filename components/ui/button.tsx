@@ -18,6 +18,7 @@ const buttonVariants = cva(
         default: 'h-[44px] px-6',
         md: 'h-[44px] px-6',
         lg: 'h-[56px] px-6 text-sm uppercase tracking-[2px]',
+        icon: 'h-10 w-10',
       },
     },
     defaultVariants: {

@@ -7,6 +7,10 @@
     @apply font-primary bg-primary text-white leading-loose;
   }
 
+  .light body {
+    @apply bg-white text-primary; /* This will be your light mode style */
+  }
+
   .h1 {
     @apply text-[48px] xl:text-[80px] leading-[1.1] font-semibold;
   }
