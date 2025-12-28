@@ -4,7 +4,14 @@
 
 @layer base {
   body {
-    @apply font-primary bg-primary text-white leading-loose;
+    /* These are now your default (light mode) styles */
+    @apply bg-white text-primary;
+  }
+
+  /* This is the new rule for dark mode */
+  .dark body {
+    /* When the <html> tag has the .dark class, apply these styles */
+    @apply bg-primary text-white;
   }
 
   .h1 {
