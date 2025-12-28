@@ -41,7 +41,6 @@ const Photo: FC = () => {
             cx="253"
             cy="253"
             r="250"
-            stroke="#00ff99"
             strokeWidth="4"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -55,6 +54,7 @@ const Photo: FC = () => {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
+            className="stroke-primary dark:stroke-accent"
           />
         </motion.svg>
       </motion.div>

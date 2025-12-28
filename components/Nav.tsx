@@ -17,7 +17,7 @@ const Nav: FC = () => {
             key={link.path}
             className={`${
               link.path === pathname && 'text-accent border-b-2 border-accent'
-            } capitalize font-medium hover:text-accent transition-all`}
+            } capitalize font-medium text-primary dark:text-white hover:text-accent-hover dark:hover:text-accent transition-all `}
           >
             {link.name}
           </Link>

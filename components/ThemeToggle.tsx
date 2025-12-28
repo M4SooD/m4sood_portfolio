@@ -11,14 +11,15 @@ const ThemeToggle: FC = () => {
 
   return (
     <Button
-      variant="outline"
+      variant={theme === 'dark' ? 'outline' : 'default'}
       size="icon"
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+      className=" hover:bg-primary hover:text-accent hover:border-primary transition-all  dark:hover:bg-accent dark:hover:text-primary dark:hover:border-accent"
     >
       {theme === 'light' ? (
         <Sun className="h-[1.2rem] w-[1.2rem]" />
       ) : (
-        <Moon className="h-[1.2rem] w-[1.2rem] rotate-90 transition-all dark:rotate-0" />
+        <Moon className="h-[1.2rem] w-[1.2rem] rotate-90 transition-all dark:rotate-0 " />
       )}
     </Button>
   );

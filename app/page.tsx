@@ -13,11 +13,12 @@ const Home: FC = () => {
         <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
           <div className="text-center xl:text-left order-2 xl:order-none ">
             <span className="text-xl">Front-End Developer</span>
-            <h1 className="h1">
+            <h1 className="h1 text-accent dark:text-white">
               {/* eslint-disable-next-line react/no-unescaped-entities */}
-              Hello I'm <br /> <span className="text-accent">Masood </span>
+              Hello I'm <br />{' '}
+              <span className="text-primary dark:text-accent">Masood </span>
             </h1>
-            <p className="max-w[500px] mb-9 text-white/80 ">
+            <p className="max-w[500px] mb-9  dark:text-white/80 ">
               I Have experince in React and Angular, skilled at creating
               user-centric applications that enhance engagement. Proficient in
               technologies such as Redux-Toolkit, MUI, React-Router, Cypress,
@@ -25,9 +26,9 @@ const Home: FC = () => {
             </p>
             <div className="flex flex-col xl:flex-row items-center gap-8">
               <Button
-                variant="outline"
+                variant="primary"
                 size="lg"
-                className="uppercase flex items-center gap-2"
+                className="uppercase flex items-center gap-2  "
               >
                 <a
                   href="/assets/Masood Moosavi - Front End Developer.pdf"
@@ -41,7 +42,7 @@ const Home: FC = () => {
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
-                  iconStyles="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent hover:text-primary hover:transition-all duration-500"
+                  iconStyles="w-9 h-9 bg-accent dark:bg-primary border border-accent rounded-full flex justify-center items-center text-primary text-base hover:bg-primary hover:text-accent hover:border-primary hover:transition-all duration-500 dark:text-accent dark:hover:border-accent dark:hover:text-primary dark:hover:bg-accent"
                 />
               </div>
             </div>

@@ -6,7 +6,7 @@ import { FC } from 'react';
 import ThemeToggle from './ThemeToggle';
 export const Header: FC = () => {
   return (
-    <header className="py-8 xl:py-12 text-white">
+    <header className="py-8 xl:py-12 bg-white text-primary dark:bg-primary dark:text-white">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
@@ -20,7 +20,7 @@ export const Header: FC = () => {
           <Nav />
           <ThemeToggle />
           <Link href="/contact">
-            <Button>Hire me</Button>
+            <Button variant="primary">Hire me</Button>
           </Link>
         </div>
 
